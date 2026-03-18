@@ -32,10 +32,14 @@ jobs:
           sdkmanager "ndk;25.2.9519653"
           echo "ANDROID_NDK=$ANDROID_SDK_ROOT/ndk/25.2.9519653" >> $GITHUB_ENV
 
-      # ── 4. Make Gradle wrapper executable ─────────────────────
-      - name: Grant Gradle Execute Permission
-        run: chmod +x gradlew
-
+      # ── 4. Download Gradle Wrapper JAR & make executable ──────
+      - name: Setup Gradle Wrapper
+        run: |
+          mkdir -p gradle/wrapper
+          curl -o gradle/wrapper/gradle-wrapper.jar \
+            https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar
+          chmod +x gradlew
+      
       # ── 5. Build the Debug APK ─────────────────────────────────
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
