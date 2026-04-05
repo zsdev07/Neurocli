@@ -1,4 +1,4 @@
-# NeuroCLI 
+# NeuroCLI 🧠
 
 **Lightweight, powerful AI terminal assistant — works everywhere, including Termux.**
 

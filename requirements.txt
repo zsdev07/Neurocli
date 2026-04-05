@@ -1,0 +1,13 @@
+# ── Core (always required) ──────────────────────────────────────────────────
+rich>=13.0
+
+# ── LLM Providers (install whichever you use) ────────────────────────────────
+# openai>=1.0               # OpenAI + OpenRouter
+# anthropic>=0.30           # Anthropic Claude
+# groq>=0.9                 # Groq (fastest free tier)
+# google-generativeai>=0.7  # Gemini
+# ollama needs no pip package — uses HTTP directly
+
+# ── Search ───────────────────────────────────────────────────────────────────
+# duckduckgo-search>=5.0    # Recommended for DDG; fallback works without it
+# tavily-python             # Optional, if you have a Tavily key
